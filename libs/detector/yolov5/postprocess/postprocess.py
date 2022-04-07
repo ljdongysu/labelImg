@@ -191,6 +191,6 @@ def PostProcessor_YOLOV5(x,nums):
     #     z.append(y.reshape(bs, -1,nums))
     #
     # output = np.concatenate(z, 1)
-    pred = non_max_suppression(x, 0.25, 0.45, classes=None, agnostic=False)
+    pred = non_max_suppression(x, THRESHOLD_YOLOV5, 0.45, classes=None, agnostic=False)
 
     return pred
