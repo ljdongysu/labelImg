@@ -60,7 +60,7 @@ def preProcessPadding(inp_img):
         gray = inp_img[:, :]
     gray = cv2.cvtColor(gray, cv2.COLOR_GRAY2RGB)
 
-    image, ratio, dw, dh = letterBox(gray, new_shape=448, mode='square')
+    image, ratio, dw, dh = letterBox(gray, new_shape=320, mode='square')
 
     img = np.half(image)
     img /= 255.0
