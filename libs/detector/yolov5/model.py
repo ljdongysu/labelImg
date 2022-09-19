@@ -34,7 +34,7 @@ class YOLOv5(object):
         oriX = image.shape[1]
         image = preProcessPadding(image)
         out = self.net.forward(image)
-        results_batch = PostProcessor_YOLOV5(out[0], len(self.classes) + 5)
+        results_batch = PostProcessor_YOLOV5(out, len(self.classes) + 5)
 
         # TODO : get rect
         shapes = []
