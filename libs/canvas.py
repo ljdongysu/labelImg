@@ -465,20 +465,23 @@ class Canvas(QWidget):
 
     def deleteSelected(self):
         if self.selectedShape:
-            shape_size = len(self.shapes)
-            id = self.shapes.index(self.selectedShape)
+            try:
+                shape_size = len(self.shapes)
+                id = self.shapes.index(self.selectedShape)
 
-            shape = self.selectedShape
-            self.remvoeShape(self.selectedShape)
-            self.selectedShape = None
+                shape = self.selectedShape
+                self.remvoeShape(self.selectedShape)
+                self.selectedShape = None
 
-            self.update()
+                self.update()
 
-            if shape_size > 1:
-                next_id = id % (shape_size - 1)
-                self.selectShape(self.shapes[next_id])
+                if shape_size > 1:
+                    next_id = id % (shape_size - 1)
+                    self.selectShape(self.shapes[next_id])
 
-            return shape
+                return shape
+            except:
+                print(1)
         return None
 
     def deleteOneShape(self, shapeToDelete):
